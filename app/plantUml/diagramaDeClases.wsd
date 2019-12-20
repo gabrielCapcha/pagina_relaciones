@@ -1,0 +1,48 @@
+@startuml
+class score {
+  int Stars
+  int assingnScore()
+}
+
+class search {
+  String search_id
+  String search
+  void search()
+}
+
+class user {
+  String user_id
+  String name
+  int age
+}
+
+class hired {
+  String hired_id
+  String Profession
+  int stars
+}
+
+class recruiter {
+  String recruiter_id
+}
+
+class contract {
+  String cantract_id
+  String Month
+  void Contract()
+}
+
+class commentary {
+  String commentary_id
+  String text
+  void makeCommentary()
+}
+user <|-- hired
+user <|-- recruiter
+
+hired o-- commentary
+commentary ..> recruiter 
+score --* hired
+contract --o recruiter
+search --o recruiter
+@enduml
